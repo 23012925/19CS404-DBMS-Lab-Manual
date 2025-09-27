@@ -251,27 +251,45 @@ foreign key (OrderID) references Orders(OrderID)
 
 **Question 9**
 ---
--- Paste Question 9 here
+Create a table named Reviews with the following columns:
+
+ReviewID as INTEGER
+ProductID as INTEGER
+Rating as REAL
+ReviewText as TEXT
 
 ```sql
--- Paste your SQL code below for Question 9
+CREATE TABLE Reviews(
+ReviewID INTEGER,
+ProductID INTEGER,
+Rating REAL,
+ReviewText TEXT
+);
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1289" height="362" alt="image" src="https://github.com/user-attachments/assets/feb6948e-06cc-4318-9313-3fa8052b7739" />
 
 **Question 10**
 ---
--- Paste Question 10 here
+Create a table named Orders with the following constraints:
+OrderID as INTEGER should be the primary key.
+OrderDate as DATE should be not NULL.
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
 
 ```sql
--- Paste your SQL code below for Question 10
+CREATE TABLE Orders(
+OrderID INTEGER PRIMARY KEY,
+OrderDate DATE NOT NULL,
+CustomerID INTEGER ,
+FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1296" height="269" alt="image" src="https://github.com/user-attachments/assets/60c7ce80-e59b-4e3f-92e1-87f1d4613fb1" />
 
 
 ## RESULT
