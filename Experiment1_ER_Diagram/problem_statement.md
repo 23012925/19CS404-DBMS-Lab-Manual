@@ -25,14 +25,36 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 ### ER Diagram:
 
+<img width="908" height="687" alt="image" src="https://github.com/user-attachments/assets/76fb0969-7bdc-4853-ba3b-65dca62ce2fc" />
 
 
 ### Entities and Attributes
 
+Member: Member_ID, Name, Membership_Type, Start_Date
 
+Trainer: Trainer_ID, Trainer_Name
+
+Programme: Programme_ID, Programme_Name, Programme_Slot
+
+Payment: Payment_ID, Membership, Date, Member_ID
+
+Session: Session_ID, Session_Slot, Session_Date, Trainer_ID, Member_ID
+
+Attendance: Attendance_ID, Time, Status, Percentage, Member_ID
 
 ### Relationships and Constraints
 
+makes (Member → Payment) (Cardinality: 1:N, Participation: Partial)
+A member can make multiple payments; each payment belongs to one member.
+
+joins (Member → Programme) (Cardinality: N:M, Participation: Partial)
+A member can join many programmes; a programme may include many members.
+
+conducts (Trainer → Programme) (Cardinality: 1:N, Participation: Partial)
+Each trainer conducts multiple programmes, but every programme is handled by one trainer.
+
+Class (Member/Trainer → Session) (Cardinality: N:M, Participation: Partial)
+Sessions are attended by multiple members and managed by multiple trainers.
 
 ---
 
@@ -51,11 +73,34 @@ The Central Library wants to manage book lending and cultural events.
 
 ### ER Diagram:
 
+<img width="1307" height="794" alt="image" src="https://github.com/user-attachments/assets/5a7f2190-bb2f-47c5-8bca-23350605f08f" />
 
 ### Entities and Attributes
+Member: Member_ID, Name, Address, Email, Phone
 
+Book: Book_ID, Title, Author
+
+Loan: Loan_ID, Loan_Date, Return_Date, Fine, Member_ID, Book_ID
+
+Event: Event_ID, Event_Name, Event_Type, Event_Date
+
+Room: Room_ID, Room_Name, Type, Capacity
+
+Event_Registration: Registration_ID, Date_of_Registration, Event_ID, Member_ID
 
 ### Relationships and Constraints
+
+Receive (Member → Loan) (Cardinality: 1:N, Participation: Partial)
+A member can receive many loans; each loan is issued to one member.
+
+Held_In (Event → Room) (Cardinality: M:N, Participation: Partial)
+An event can be held in multiple rooms; each room can host multiple events.
+
+Registers (Member → Event) (Cardinality: N:M, Participation: Partial)
+A member can register for multiple events; an event can have many members.
+
+Event_Speaker (SpeakerAuthor → Event) (Cardinality: M:N, Participation: Partial)
+Speakers or authors can join multiple events; each event can feature many speakers.
 
 ---
 
