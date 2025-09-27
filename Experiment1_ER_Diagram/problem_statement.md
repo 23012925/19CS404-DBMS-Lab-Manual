@@ -6,6 +6,8 @@ To understand and apply ER modeling concepts by creating ER diagrams for real-wo
 ## Purpose
 Gain hands-on experience in designing ER diagrams that represent database structure including entities, relationships, attributes, and constraints.
 
+## NAME : JANARTHANAN K
+## REG. NO: 212223040072
 ---
 
 # Scenario A: City Fitness Club Management
@@ -22,31 +24,15 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 - Payments tracked for memberships and sessions.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_fitness.png)
+
+
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+
 
 ### Relationships and Constraints
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
-
-### Assumptions
-- 
-- 
-- 
 
 ---
 
@@ -64,31 +50,12 @@ The Central Library wants to manage book lending and cultural events.
 - Overdue fines apply for late returns.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_library.png)
+
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
 
 ### Relationships and Constraints
-
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
-
-### Assumptions
-- 
-- 
-- 
 
 ---
 
@@ -106,38 +73,32 @@ A popular restaurant wants to manage reservations, orders, and billing.
 - Waiters assigned to serve reservations.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_restaurant.png)
+
+<img width="1305" height="818" alt="image" src="https://github.com/user-attachments/assets/2a6027cf-9b50-484d-b505-0ed37a548a01" />
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+Customer: Customer_ID, Name
+
+Reservation: Reservation_ID, Date, Time, No_of_Guests, Customer_ID, Table_ID
+
+Table: Table_ID, Capacity
+
+Dish: Dish_ID, Name, Price, Category_ID
+
+Category: Category_ID, Name
+
 
 ### Relationships and Constraints
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+TO (Customer → Reservation) (Cardinality: 1:N, Participation: Partial)
+Each customer can make many reservations, and each reservation belongs to one customer.
 
-### Assumptions
-- 
-- 
-- 
+FOR (Reservation → Table) (Cardinality: 1:N, Participation: Partial)
+A reservation may include one or more tables; each table may be reserved multiple times.
 
----
+SELECT (Category → Dish) (Cardinality: 1:N, Participation: Total)
+A category can contain many dishes; each dish belongs to one category.
 
-## Instructions for Students
-
-1. Complete **all three scenarios** (A, B, C).  
-2. Identify entities, relationships, and attributes for each.  
-3. Draw ER diagrams using **draw.io / diagrams.net** or hand-drawn & scanned.  
-4. Fill in all tables and assumptions for each scenario.  
-5. Export the completed Markdown (with diagrams) as **a single PDF**
+TOTAL (Reservation → Bill) (Cardinality: 1:1, Participation: Total for Bill)
+Every reservation generates one bill.
