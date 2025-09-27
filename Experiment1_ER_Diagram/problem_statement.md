@@ -148,6 +148,8 @@ A category can contain many dishes; each dish belongs to one category.
 TOTAL (Reservation → Bill) (Cardinality: 1:1, Participation: Total for Bill)
 Every reservation generates one bill.
 
+---
+
 ### Result
 
 The combined ER diagram effectively represents entities and relationships of the restaurant, fitness club, and library systems. It clearly captures interactions like reservations, sessions, and book lending, ensuring smooth data flow and efficient system management.
