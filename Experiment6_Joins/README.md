@@ -81,7 +81,8 @@ select o.ord_no,o.purch_amt,c.cust_name,c.city
 from customer c
 join orders o on c.salesman_id=o.salesman_id
 where o.purch_amt between 500 and 2000
-group by o.ord_no ;```
+group by o.ord_no ;
+```
 
 
 **Output:**
