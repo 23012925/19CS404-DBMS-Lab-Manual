@@ -1,7 +1,7 @@
 # Experiment 2: DDL Commands
 
-### Name: JANARTHANAN K
-### Reg.No.: 212223040072
+## Name: JANARTHANAN K
+## Reg.No.: 212223040072
 
 ## AIM
 To study and implement DDL commands and different types of constraints.
